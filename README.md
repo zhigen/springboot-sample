@@ -52,15 +52,18 @@
 
 * 配置环境变量
 
-        cmd: setx Path "%Path%E:\maven\bin;"
+        $ setx Path "%Path%E:\maven\bin;"
 
 * 配置本地仓库
 
+        打开配置文件
         E:\maven\conf\settings.xml
+        指定地方加入
         <localRepository>E:\repo</localRepository>
 
 * 配置镜像加速
 
+        配置文件指定地方加入
         <mirror>
           <id>alimaven</id>
           <name>aliyun maven</name>
@@ -97,7 +100,7 @@
 ### 3.1. jar包运行
     进入项目目录
     $ cd .
-    执行打包命令(注：需要编译环境，依赖步骤2.1、2.2)
+    执行打包命令（注：需要编译环境，依赖步骤2.1、2.2）
     $ mvn package -Dmaven.test.skip=true
     打包完成后
     $ cd target
@@ -107,7 +110,7 @@
 ### 3.2. docker运行
     $ cd .
     编写dockerFile
-    创建镜像   
+    创建镜像，最后的.不能省略
     $ docker build -t registry.cn-hangzhou.aliyuncs.com/zglu/springboot-sample:1 -f dockerFile .
     启动镜像
     $ docker run --name springboot-sample registry.cn-hangzhou.aliyuncs.com/zglu/springboot-sample:1
@@ -116,7 +119,7 @@
 ### 3.3. k8s运行
     $ cd .
     编写springboot-maven.yaml
-    上传镜像到私有库前登录
+    上传镜像到私有库前需要登录
     $ docker login --username=385861131@qq.com registry.cn-hangzhou.aliyuncs.com
     上传镜像
     $ docker push registry.cn-hangzhou.aliyuncs.com/zglu/springboot-sample:1
