@@ -1,0 +1,4 @@
+FROM anapsix/alpine-java
+MAINTAINER zglu
+ADD target/springboot-sample-1.0-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java","-jar","app.jar"]

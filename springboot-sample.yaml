@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: springboot-sample
+spec:
+  containers:
+    - name: springboot-sample
+      image: registry.cn-hangzhou.aliyuncs.com/zglu/springboot-sample:1
