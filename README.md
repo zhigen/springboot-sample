@@ -98,7 +98,7 @@
     进入项目目录
     $ cd .
     执行打包命令(注：需要编译环境，依赖步骤2.1、2.2)
-    $ mvn package -Dmaven.test.skip=true   
+    $ mvn package -Dmaven.test.skip=true
     打包完成后
     $ cd target
     $ java -jar springboot-sample-1.0-SNAPSHOT.jar
